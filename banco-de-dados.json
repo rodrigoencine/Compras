@@ -1,0 +1,142 @@
+{
+  "usuarios": [
+    {
+      "matricula": "313131",
+      "nome": "Rodrigo Dornelles Encine",
+      "email": "rodrigoencine@procempa.com.br",
+      "ramal": 9999,
+      "setor": {
+        "sigla": "A/COL",
+        "centroCusto": "2019",
+        "descricao": "Compras e Licitações"
+      },
+      "cargo": "Técnico administrativo",
+      "grupos": "adm",
+      "status": "inativo",
+      "id": 2
+    },
+    {
+      "matricula": "ppppppp",
+      "nome": "Rodrigo Dornelles Encine",
+      "email": "rodrigoencine@procempa.com.br",
+      "ramal": 2222,
+      "setor": {
+        "sigla": "A/MAN",
+        "centroCusto": "2016",
+        "descricao": "Compras e Licitações"
+      },
+      "cargo": "Analista administrativo",
+      "grupos": "user",
+      "status": "ativo",
+      "id": 3
+    },
+    {
+      "matricula": "teste",
+      "nome": "Rodrigo Dornelles Encine",
+      "email": "rodrigoencine@procempa.com.br",
+      "ramal": 2222,
+      "setor": {
+        "sigla": "A/CON",
+        "centroCusto": "1234",
+        "descricao": "Compras e Licitações"
+      },
+      "cargo": {
+        "ocupacao": "Supervisor",
+        "id": 1
+      },
+      "grupos": "adm",
+      "status": "ativo",
+      "id": 37
+    },
+    {
+      "matricula": "31278",
+      "nome": "Rodrigo Dornelles Encine",
+      "email": "rodrigoencine@procempa.com.br",
+      "ramal": 1233,
+      "setor": {
+        "sigla": "A/FOR",
+        "centroCusto": "1234",
+        "descricao": "financeiro"
+      },
+      "cargo": {
+        "ocupacao": "Supervisor",
+        "id": 1
+      },
+      "grupos": "adm",
+      "status": "ativo",
+      "id": 38
+    }
+  ],
+  "cargos": [
+    {
+      "ocupacao": "Supervisor",
+      "id": 1
+    },
+    {
+      "ocupacao": "Diretor Administrativo",
+      "id": 2
+    },
+    {
+      "ocupacao": "Diretor Técnico",
+      "id": 3
+    },
+    {
+      "ocupacao": "Presidente",
+      "id": 4
+    },
+    {
+      "ocupacao": "Técnico Administrativo",
+      "id": 5
+    },
+    {
+      "ocupacao": "Analista de Logistica",
+      "id": 6
+    },
+    {
+      "ocupacao": "Analista de Logistica",
+      "id": 7
+    },
+    {
+      "ocupacao": "Analista de Logistica",
+      "id": 8
+    },
+    {
+      "ocupacao": "Assessoria",
+      "id": 17
+    }
+  ],
+  "setor": [
+    {
+      "sigla": "A/COL",
+      "centroCusto": "1234",
+      "descricao": "Compras e Licitações"
+    },
+    {
+      "sigla": "A/FOR",
+      "centroCusto": "1234",
+      "descricao": "financeiro"
+    }
+  ],
+  "fornecedores": [
+    {
+      "cnpj": "123456",
+      "razaoSocial": "blablabla",
+      "nomeFantasia": "blebleble",
+      "endereco": "cu do mundo",
+      "email": "@@@@@@@",
+      "telefone": 123456,
+      "contato": "Rodrigo",
+      "id": 1
+    },
+    {
+      "cnpj": "123456",
+      "razaoSocial": "blablabla",
+      "nomeFantasia": "blebleble",
+      "endereco": "cu do mundo",
+      "email": "@@@@@@@",
+      "telefone": 123456,
+      "contato": "Patricia",
+      "id" : 2
+    }
+  ]
+}
