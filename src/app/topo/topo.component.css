@@ -1,0 +1,23 @@
+
+.topbar{
+  background-color: #F0FFFF;
+  min-height:70px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+}
+.topbar .logo h2{
+  font-size: 1.8em;
+  font-family: 'Oxygen', sans-serif;
+}
+.pesquisa{
+  margin-top: 20px;
+}
+.logo{
+ margin-top: 20px;
+ color:#069;
+ text-transform: uppercase;
+
+}

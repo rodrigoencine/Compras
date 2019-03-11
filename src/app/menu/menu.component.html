@@ -1,0 +1,54 @@
+<nav class="navbar">
+      <div class="row">
+        <div class="div col-md-12" [class.retratil-toggle]="exibirMenu">
+          <a class="toggle" (click)="openMenu()"
+          [class.retratil]="exibirMenu"
+          >
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+    </div>
+
+    <ul class="menu" [hidden]="!exibirMenu">
+        <li class="menu-title">
+          <a routerLink="">
+            Stepcom
+          </a>
+        </li>
+        <li class="menu-item">
+            <a routerLink=""> <i class="fa fa-tachometer" aria-hidden="true"></i>
+               Dashboard
+            </a>
+        </li>
+        <li class="menu-item">
+            <a routerLink="/processos"> <i class="fa fa-file-text" aria-hidden="true"></i>
+               Processos
+            </a>
+        </li>
+        <li class="menu-item">
+            <a routerLink="/usuarios" > <i class="fa fa-user" aria-hidden="true"></i>
+               Usuario
+            </a>
+        </li>
+        <li class="menu-item">
+            <a routerLink="/usuario"> <i class="fa fa-truck" aria-hidden="true"></i>
+               Fornecedores
+            </a>
+        </li>
+        <li class="menu-item">
+            <a routerLink="/financeira" > <i class="fa fa-usd" aria-hidden="true"></i>
+               Solicitação financeira
+            </a>
+        </li>
+        <li class="menu-item">
+            <a routerLink="/ordem-compra" > <i class="fa fa-user" aria-hidden="true"></i>
+               Ordem de compra
+            </a>
+        </li>
+        <li class="menu-item">
+            <a routerLink="/cargo" > <i class="fa fa-user" aria-hidden="true"></i>
+               Cargos
+            </a>
+        </li>
+    </ul>
+</nav>

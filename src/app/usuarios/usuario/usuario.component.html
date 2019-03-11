@@ -1,0 +1,35 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Dados do Usuário</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" *ngIf="usuario!==undefined">
+        <p><strong>Matricula: </strong> {{usuario.matricula}}</p>
+        <hr>
+        <p><strong>Nome: </strong>{{usuario.nome}} </p>
+        <hr>
+        <p><strong>E-mail: </strong>{{usuario.email}}</p>
+        <hr>
+        <p><strong>Cargo: </strong> {{usuario.cargo.ocupacao}}</p>
+        <hr>
+        <p><strong>Setor: </strong> {{usuario.setor.sigla}} - {{usuario.setor.descricao}}</p>
+        <hr>
+        <p><strong>Ramal: </strong> {{usuario.ramal}}</p>
+        <hr>
+        <p><strong>Perfil: </strong> {{usuario.grupos}}</p>
+        <hr>
+        <p><strong>Acesso: </strong> {{usuario.status}}</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>      </div>
+    </div>
+  </div>
+  <div>
+
+  </div>
+</div>

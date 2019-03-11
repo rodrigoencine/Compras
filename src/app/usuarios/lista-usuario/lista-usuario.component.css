@@ -1,0 +1,14 @@
+.tabela{
+  font-size: .9em;
+}
+.tabela .central{
+  text-align: center;
+}
+
+.tabela td a span i{
+  text-decoration: none;
+}
+.tabela td a{
+  list-style: none;
+}
+

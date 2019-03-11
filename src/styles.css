@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~font-awesome/css/font-awesome.css';
+
+.page-content{
+  padding: 25px;
+}
+.retratil{
+  margin-left: 230px;
+  transition: all .2s ease;
+}
+.retratil-toggle{
+  margin-left: 230px;
+  transition: all .2s ease;
+}
+
+/* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); */
+/* .shadow-lg{box-shadow:0 1rem 3rem rgba(0,0,0,.175)!important} */
+
+.badge-success,.badge-danger{
+  width: 50px;
+}
+
+p,label,h1,h2,h3,h4,h5,h6{
+  font-family: sans-serif;
+}
+body{
+  background: whitesmoke;
+}
+
+.content{
+  box-sizing: border-box;
+  transition: margin-left 0.5s;
+  margin: 20px;
+  margin-top: 150px;
+}
+.content h4{
+   margin-bottom: 20px;
+   letter-spacing: 2px;
+}
+@media(min-width: 960px){
+  .content{
+      margin-left: 230px;
+  }
+  .sidebar.toggled{
+      margin-left: -211px;
+  }
+  .content.toggled{
+      margin-left: 20px;
+  }
+}
+tr td i{
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 7px;
+  font-size: .8em;
+}
+input.ng-invalid.ng-touched{
+  border: 2px solid red;
+  }
+  select.ng-invalid.ng-touched{
+  border: 2px solid red;
+  }
+  input.ng-valid.ng-touched{
+  border: 2px solid rgb(0,255,127);
+  }
+  select.ng-valid.ng-touched{
+  border: 2px solid rgb(0, 255, 127);
+  }

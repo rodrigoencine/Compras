@@ -1,0 +1,47 @@
+.lista-fornecedores{
+  overflow-y: visible;
+}
+tr td i{
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 7px;
+  font-size: .8em;
+}
+.list-group .active{
+  background: #E8E8E8;
+  color: black;
+  border: 2px solid #E8E8E8;
+}
+
+.lista{
+  overflow-y: auto;
+  height: 38em;
+
+}
+.content{
+  box-sizing: border-box;
+  transition: margin-left 0.5s;
+  margin: 20px;
+  margin-top: 150px;
+}
+.content h4{
+   margin-bottom: 20px;
+   letter-spacing: 2px;
+}
+@media(min-width: 960px){
+  .content{
+      margin-left: 230px;
+  }
+  .sidebar.toggled{
+      margin-left: -211px;
+  }
+  .content.toggled{
+      margin-left: 20px;
+  }
+}
+tr td i{
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 7px;
+  font-size: .8em;
+}

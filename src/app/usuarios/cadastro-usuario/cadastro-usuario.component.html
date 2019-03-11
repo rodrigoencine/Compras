@@ -1,0 +1,204 @@
+<section class="content">
+  <h4>Cadastro usuário</h4>
+   <div *ngIf="idUsuario!==undefined">
+
+     <div class="alert bg-success alert-dismissible fade show" role="alert">
+        <i class="far fa-thumbs-up"></i>Usuario  <strong>{{usuario.nome}}</strong> cadastrado com sucesso
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+ </div>
+  <form [formGroup]="formulario" novalidate (ngSubmit)="confirmarCadastro()" style="font-size: .9em;">
+          <div class="teste-card">
+          <div class="card">
+            <div class="card-body">
+              <h6 class="card-title" style="margin-bottom: 30px;">Dados de Cadastro</h6>
+               <div class="form-row">
+                  <div class="form-group col-md-12">
+                       <label>Nome</label>
+                        <div class="input-group input-group-sm">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-user"></i></span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Por favor digite o nome" formControlName="nome">
+                      </div>
+                      <small *ngIf="formulario.get('nome').valid && formulario.get('nome').touched" class="form-text text-success"><i class="fas fa-check" style="margin-right: 5px;"></i></small>
+                      <small *ngIf="!formulario.get('nome').valid && formulario.get('nome').touched" class="form-text text-danger">
+                          <div>
+                              <i class="fas fa-exclamation-triangle" style="margin-right: 7px; color: red;"></i>Por favor digite o nome do usuário
+                          </div>
+                      </small>
+                  </div>
+              </div>
+              <div class="form-row">
+                  <div class="form-group col-md-12">
+                       <label>Login</label>
+                        <div class="input-group input-group-sm">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Por favor digite o nome" formControlName="login">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-row">
+                 <div class="form-group col-md-12">
+                       <label>Senha</label>
+                        <div class="input-group input-group-sm">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Senha deve possuir minimo 6 digitos" formControlName="senha">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label>Permissões</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i  class="fas fa-university"></i></span>
+                            </div>
+                        </div>
+                        <select class="custom-select form-control form-control-sm" formControlName="grupo">
+                            <option value="">Selecione uma opção</option>
+                            <option value="administrador">Administrador</option>
+                            <option value="supervisor">Supervisor</option>
+                            <option value="usuario">Usuario</option>
+                        </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label>Acesso</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i  class="fas fa-university"></i></span>
+                            </div>
+                          </div>
+                          <select class="custom-select form-control form-control-sm" formControlName="status">
+                            <option value="">Selecione uma opção</option>
+                            <option value="ativo">ativo</option>
+                            <option value="inativo">inativo</option>
+                          </select>
+                        </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+           <div class="card" >
+            <div class="card-body">
+              <h6 class="card-title" style="margin-bottom: 30px;">Dados Profissionais</h6>
+               <div class="form-row">
+                  <div class="form-group col-md-4">
+                      <label>Matricula</label>
+                        <div class="input-group input-group-sm">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Digite a matricula" formControlName="matricula">
+                      </div>
+                      <small *ngIf="formulario.get('matricula').valid && formulario.get('matricula').touched" class="form-text text-success">Ok</small>
+                      <small *ngIf="!formulario.get('matricula').valid && formulario.get('matricula').touched" class="form-text text-danger">
+                          <div class="alert alert-warning" role="alert">
+                              <i class="fas fa-exclamation-triangle"></i>Matricula invalida
+                            </div>
+                    </small>
+                  </div>
+                   <div class="form-group col-md-8">
+                      <label>Cargo</label>
+                     <div class="input-group">
+                  <div class="input-group-prepend">
+                      <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+                          </div>
+                    </div>
+                    <select class="custom-select form-control form-control-sm" formControlName="cargo">
+                      <option *ngFor="let item of listaCargos" [ngValue]="item">{{item.ocupacao}}</option>
+                    </select>
+                    <a style="font-size: 1.5em; margin-left: 3px;"><i class="fas fa-plus-circle fa-1x"></i></a>
+                  </div>
+                  <small *ngIf="formulario.get('cargo').valid && formulario.get('cargo').touched" class="form-text text-success">OK</small>
+                  <small *ngIf="!formulario.get('cargo').valid && formulario.get('cargo').touched" class="form-text text-danger">
+                      <div class="alert alert-warning" role="alert">
+                          Por favor selecione um cargo
+                        </div>
+                </small>
+                  </div>
+              </div>
+               <div class="form-row">
+                  <div class="form-group col-md-12">
+                      <label>Setor</label>
+                     <div class="input-group">
+                  <div class="input-group-prepend">
+                      <div class="input-group-prepend">
+                              <span class="input-group-text"><i  class="fas fa-university"></i></span>
+                    </div>
+                    </div>
+                    <select
+                    class="custom-select form-control form-control-sm" formControlName="setor">
+                      <option *ngFor="let item of listaSetor" [ngValue]="item">{{item.descricao}}</option>
+                    </select>
+                      <a style="font-size: 1.5em; margin-left: 3px;"><i class="fas fa-plus-circle fa-1x"></i></a>
+                  </div>
+                  <small *ngIf="formulario.get('setor').valid && formulario.get('setor').touched" class="form-text text-success">Ok</small>
+                   <small *ngIf="!formulario.get('setor').valid && formulario.get('setor').touched" class="form-text text-danger">
+                       <div class="alert alert-warning" role="alert">
+                           Por favor selecione um setor
+                         </div>
+                 </small>
+                  </div>
+              </div>
+               <div class="form-row">
+                      <div class="form-group col-md-12">
+                       <label>Ramal</label>
+                        <div class="input-group input-group-sm">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                          </div>
+                          <input type="number" class="form-control" placeholder="Digite o ramal" formControlName="ramal">
+                      </div>
+                      <small *ngIf="formulario.get('ramal').valid && formulario.get('ramal').touched" class="form-text text-success">Ok</small>
+                      <small *ngIf="!formulario.get('ramal').valid && formulario.get('ramal').touched" class="form-text text-danger">
+                          <div class="alert alert-warning" role="alert">
+                              Por favor digite um ramal
+                            </div>
+                    </small>
+                  </div>
+              </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                      <label>Email</label>
+                        <div class="input-group input-group-sm ">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-at"></i></span>
+                          </div>
+                          <input type="email" class="form-control" placeholder="Favor digite e-mail" formControlName="email">
+                      </div>
+                      <small *ngIf="formulario.get('email').valid && formulario.get('email').touched" class="form-text text-success"><i class="fas fa-check" style="margin-right: 5px;"></i></small>
+                      <small *ngIf="!formulario.get('email').valid && formulario.get('email').touched" class="form-text text-danger">
+                         <div style="font-size: 1.2em;">
+                            Por favor digite email valido
+                          </div>
+                  </small>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       <div class="form-row" style="margin-top: 20px;">
+        <div class="form-group col-md-12">
+          <div style="border: 1px solid #ccc;background:  white; padding: 10px;">
+            <button class="btn btn-primary btn-sm" type="submit" [disabled]="!formulario.valid">
+                <i class="fas fa-plus-circle" style="margin-right: 6px;"></i>Cadastrar
+            </button>
+            <button type="button" class="btn btn-info btn-sm" type="button" (click)="limpar()"><i class="fas fa-trash-alt" style="margin-right: 6px;"></i>Limpa</button>
+            <button type="button" (click)="redirecionar()" class="btn btn-danger btn-sm float-right"><i  class="fas fa-arrow-circle-right" style="margin-right: 6px;"></i>Pesquisa usários
+            </button>
+               </div>
+           </div>
+       </div>
+      </form>
+</section>

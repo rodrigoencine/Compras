@@ -1,0 +1,23 @@
+ .formulario{
+  font-size: .9em;
+  margin-bottom: 10px;
+}
+
+.tabela .central{
+  text-align: center;
+}
+.tabela{
+  font-size: .9em;
+}
+
+.cor{
+  background:#CEF6F5;
+  color: white;
+}
+hr{
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+.alert-success{
+  background: rgb(200, 191, 233);
+}

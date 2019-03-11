@@ -1,0 +1,19 @@
+<section class="content" style="font-size: .9em;">
+    <h4>Fornecedores</h4>
+    <div class="row">
+        <div class="md-col-4">
+           <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a *ngFor="let fornecedor of listaFornecedor" class="nav-link active" id="v-pills-home-tab" data-toggle="pill"
+              role="tab"
+              aria-controls="v-pills-home"
+              aria-selected="true"
+              [routerLink]="['/fornecedor', fornecedor.id]">{{fornecedor.nome}}</a>
+          </div>
+        </div>
+        <div class="md-col-8">
+
+        </div>
+    </div>
+
+
+</section>

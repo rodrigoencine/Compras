@@ -1,0 +1,138 @@
+
+<section [class.retratil]="exibirMenu">
+    <div class="row titulo-cadastro">
+      <div class="col-md-8">
+        <h4>Cargo</h4>
+      </div>
+    </div>
+    <hr>
+    <div *ngIf="idCargo!==undefined">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-thumbs-up" style="margin-right: 8px;"></i>Ocupação  <strong>{{cargo.ocupacao}}</strong> cadastrado com sucesso
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+    </div>
+    <!-- <div class="card">
+        <div class="card-header">
+            <i class="fas fa-user-tie"></i>Cadastro de Cargo
+            </div>
+            <div class="card-body"> -->
+                <form [formGroup]="formularioCargo" novalidate (ngSubmit)="confirmarCadastroCargo()" class="formulario">
+
+      <div class="form-row">
+          <div class="form-group col-md-12">
+              <label>Ocupacao</label>
+                <div class="input-group input-group-sm input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-briefcase"></i></span>
+                  <input type="email" class="form-control" formControlName="ocupacao">
+              </div>
+              <small *ngIf="formularioCargo.get('ocupacao').valid && formularioCargo.get('ocupacao').touched" class="form-text text-success">Ok</small>
+              <small *ngIf="!formularioCargo.get('ocupacao').valid && formularioCargo.get('ocupacao').touched" class="form-text text-danger">
+                  <div class="alert alert-warning" role="alert">
+                      Por favor digite email valido
+                    </div>
+            </small>
+          </div>
+      </div>
+
+           <button class="btn btn-primary btn-sm" type="submit" [disabled]="!formularioCargo.valid"><i class="fas fa-plus-circle" style="margin-right: 5px;"></i>Cadastrar</button>
+          <button class="btn btn-info btn-sm" type="button" (click)="limpar()"><i class="fas fa-trash-alt" style="margin-right: 5px;"></i>Limpar</button>
+        </form>
+      <!-- </div>
+    </div> -->
+
+    </section>
+
+    <section [class.retratil]="exibirMenu" class="tabela" style="margin-top:40px;">
+        <!-- <div class="card">
+            <div class="card-header">
+                <i class="fas fa-clipboard-list"></i>Lista de Cargos
+            </div>
+            <div class="card-body"> -->
+                <div class="row">
+                    <div class="col-md-12">
+                      <div >
+                          <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                              </div>
+                          <input
+                            type="text"
+                            class="form-control"
+                            aria-label="Text input with segmented dropdown button"
+                            placeholder="Escolha a opção de pesquisa"
+                            #termo
+                            (keyup)="pesquisar(termo.value)"
+                            >
+                      </div>
+                    </div>
+                   </div>
+              </div>
+
+      <div class="table-responsive" *ngIf="listaCargos.length!==0; else vazio">
+          <table class="table table-sm table-hover  table-striped" >
+              <thead>
+              <tr>
+                 <th>Ocupação</th>
+                 <th class="central" scope="col" style="width: 80px;">Açoes
+               </tr>
+
+              </thead>
+              <tbody >
+                  <tr *ngFor="let cargo of listaCargos">
+                      <td>{{cargo.ocupacao}}</td>
+                      <td class="central">
+                        <a>
+                           <span>
+                                <i class="fas fa-edit" data-toggle="tooltip" data-placement="bottom" title="Editar"></i>
+                            </span>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            <!-- </div>
+          </div> -->
+
+          <ng-template #vazio>
+              <div class="row">
+               <div class="col-md-12">
+
+                   <hr>
+                   <!-- <div class="alert alert-danger" role="alert">
+                   <h6 class="text-center" style="color: white;"> <i class="fas fa-exclamation-circle" style="margin-right: 5px;"></i>Não foram encontrados itens para sua busca</h6>
+                   </div> -->
+                   <div class="jumbotron jumbotron-fluid">
+
+                      <h1 class="display-4">Fluid jumbotron</h1>
+                      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+
+                  </div>
+
+                 </div>
+             </div>
+           </ng-template>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
